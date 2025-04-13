@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Volume2 } from 'lucide-react';
 import { Word } from '@/types';
@@ -10,14 +10,27 @@ interface WordCardProps {
 
 const WordCard: React.FC<WordCardProps> = ({ word }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const playAudio = () => {
-    setIsPlaying(true);
-    // In a real application, you would play the audio file here
-    // For now we'll just simulate it with a timeout
-    setTimeout(() => {
+    if (!audioRef.current) return;
+    
+    if (isPlaying) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
       setIsPlaying(false);
-    }, 1000);
+      return;
+    }
+
+    setIsPlaying(true);
+    audioRef.current.play().catch(error => {
+      console.error("Error playing audio:", error);
+      setIsPlaying(false);
+    });
+  };
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
   };
 
   return (
@@ -27,6 +40,10 @@ const WordCard: React.FC<WordCardProps> = ({ word }) => {
           src={word.image} 
           alt={word.hebrew} 
           className="w-full h-full object-cover"
+          onError={(e) => {
+            // If image fails to load, use a fallback
+            e.currentTarget.src = '/placeholder.svg';
+          }}
         />
       </div>
       <CardContent className="p-4">
@@ -43,6 +60,12 @@ const WordCard: React.FC<WordCardProps> = ({ word }) => {
             <Volume2 className={`h-6 w-6 ${isPlaying ? 'text-primary animate-pulse' : 'text-gray-600'}`} />
           </button>
         </div>
+        <audio 
+          ref={audioRef}
+          src={word.audio} 
+          onEnded={handleAudioEnded}
+          preload="none"
+        />
       </CardContent>
     </Card>
   );
