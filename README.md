@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
 
-## Project info
+# Hebrew-Russian Learning App for Children
 
-**URL**: https://lovable.dev/projects/8f95d595-04ab-4aee-b091-92fb7ff64471
+## Project Description
+An interactive web application designed to help Russian-speaking children learn Hebrew. The app features Hebrew words with nikud (vowel points), Russian translations, images, and audio pronunciations across various categories.
 
-## How can I edit this code?
+## Features
+- Hebrew words with nikud
+- Russian translations
+- Categorized vocabulary (Home, School, Body, Colors, Numbers, Letters)
+- Interactive word cards with images and audio
 
-There are several ways of editing your application.
+## Technologies Used
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- Vite
 
-**Use Lovable**
+## Prerequisites
+- Node.js (v18 or later)
+- npm or bun
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f95d595-04ab-4aee-b091-92fb7ff64471) and start prompting.
+## Installation Steps
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/hebrew-russian-learning-app.git
 
-**Use your preferred IDE**
+# Navigate to the project directory
+cd hebrew-russian-learning-app
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
+The project can be easily deployed using Lovable or standard React deployment methods.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-**Use GitHub Codespaces**
+## License
+Distributed under the MIT License.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8f95d595-04ab-4aee-b091-92fb7ff64471) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contact
+Project Link: [Your GitHub Repository URL]
+```
